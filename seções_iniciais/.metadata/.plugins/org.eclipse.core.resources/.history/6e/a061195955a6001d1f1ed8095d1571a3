@@ -1,0 +1,17 @@
+package application;
+
+public class Program {
+
+	public static void main(String[] args) {
+		int x = 20;
+
+		// boxing (encaixotamento)
+		Object obj = x;
+		
+		// unboxing
+		// precisa ser feita o casting pois obj é do tipo
+		// obj e não int;
+		int y = (int) obj;
+	}
+
+}

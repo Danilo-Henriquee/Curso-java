@@ -1,0 +1,7 @@
+INDEX VERSION 1.131+C:\Workspace\seção-11-Data-hora\.metadata\.plugins\org.eclipse.jdt.core
+1264474927.index
+1316728650.index
+1865797976.index
+1067488366.index
+3026033923.index
+589713472.index

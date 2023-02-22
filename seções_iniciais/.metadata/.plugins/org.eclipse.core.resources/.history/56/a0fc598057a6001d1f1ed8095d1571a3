@@ -1,0 +1,29 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+/* 
+ * entre o simbolo de maior e menor é o que chama de generics que é quando
+ * você pode parametrizar a definição de um tipo informando um outro tipo
+ * especifico que você quiser, quando eu quiser uma lista de inteiros eu
+ * uso a wrapper class do inteiro que é Integer o mesmo serve para float
+ * double entre outros.
+*/  
+		List<String> list = new ArrayList<>();
+		
+		list.add("Maria");
+		list.add("Alex");
+		list.add("Bob");
+		list.add("Anna");
+		
+		for (String x : list) {
+			System.out.println(x);
+		}
+	}
+
+}

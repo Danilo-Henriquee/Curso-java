@@ -1,0 +1,72 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Account;
+
+public class Program {
+
+	@SuppressWarnings("unused")
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter account number: ");
+		int accountNum = sc.nextInt();
+
+		System.out.println("Enter account holder: ");
+		String holder = sc.next();
+
+		System.out.println("Is there a initial deposit (y/n)? ");
+		char initDeposit = sc.next().charAt(0);
+
+		Account account = new Account(holder, accountNum);
+		double amount;
+		
+		if (initDeposit == 'y') {
+			System.out.println("Enter a deposit value: ");
+			amount = sc.nextDouble();
+			
+			account.deposit(amount);
+			
+			System.out.printf(
+					"Account data: \n"
+					+ "Account %d , Holder: %s, Balance: $ %.2f%n"
+					, account.getAccount(), account.getName(), account.getBalance()
+			);
+		} 
+		else {
+			System.out.printf(
+				"Account data: \n"
+				+ "Account %d , Holder: %s, Balance: %.2f%n"
+				, account.getAccount(), account.getName(), account.getBalance()
+			);
+		}
+		
+		System.out.println("Enter a deposit value: ");
+		amount = sc.nextDouble();
+		account.deposit(amount);
+		
+		System.out.printf(
+				"Updated account data: \n"
+				+ "Account %d , Holder: %s, Balance: $ %.2f%n"
+				, account.getAccount(), account.getName(), account.getBalance()
+		);
+		
+		System.out.println();
+		System.out.println("Enter a withdraw value: ");
+		amount = sc.nextDouble();
+		account.withdraw(amount);
+		
+		System.out.printf(
+				"Updated account data: \n"
+				+ "Account %d , Holder: %s, Balance: $ %.2f%n"
+				, account.getAccount(), account.getName(), account.getBalance()
+		);
+		
+		sc.close();
+	}
+
+}

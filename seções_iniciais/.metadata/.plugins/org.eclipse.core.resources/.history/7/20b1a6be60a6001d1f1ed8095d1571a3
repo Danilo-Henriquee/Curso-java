@@ -1,0 +1,55 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("How many employees will be registered: ");
+		int n = sc.nextInt();
+		List<Integer> idList = new ArrayList<>();
+		List<String> nameList = new ArrayList<>();
+		List<Double> salaryList = new ArrayList<>();
+		
+		for(int i = 0;i < n; i++) {
+			System.out.println("Employee #" + (i + 1));
+			System.out.print("Id: ");
+			Integer id = sc.nextInt();
+			
+			System.out.print("Name: ");
+			String name = sc.next();
+			
+			System.out.print("Salary: ");
+			Double salary = sc.nextDouble();
+			
+			idList.add(id);
+			nameList.add(name);
+			salaryList.add(salary);
+		}
+		
+		System.out.print("Enter the employee id that will have salary increase: ");
+		Integer employeeID = sc.nextInt();
+		System.out.print("Enter the percentage: ");
+		Double percentage = sc.nextDouble();
+		
+		Integer index = idList.indexOf(employeeID);
+		
+	
+		System.out.println(index);
+		
+		
+		sc.close();
+	}
+
+	private void setSalary(Double percentage) {
+		
+	}
+}
