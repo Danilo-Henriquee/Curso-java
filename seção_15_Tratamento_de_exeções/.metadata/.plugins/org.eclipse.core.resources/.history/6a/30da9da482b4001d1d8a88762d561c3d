@@ -1,0 +1,12 @@
+package model.exceptions;
+
+public class DomainException extends Exception{
+	private static final long serialVersionUID = 1L;
+
+	/* esse construtor serve para permitir que eu instancie uma exceção
+	 * personalizada passando uma mensagem para ela, essa mensagem 
+	 * ficara armazenada dentro da minha exceção */ 
+	public DomainException(String msg) {
+		super(msg);
+	}
+}

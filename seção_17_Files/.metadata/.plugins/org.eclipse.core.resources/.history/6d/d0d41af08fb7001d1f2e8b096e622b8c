@@ -1,0 +1,62 @@
+package application;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Insira o caminho do arquivo: ");
+		String strPath = "C:\\ws-eclipse\\seção_17_Files\\exercicio\\itens.csv";
+		
+		String[] lines = new String[] {
+				"TV LED,1290.99,1",
+				"Video Game Chair,350.50,3",
+				"Iphone X,900.00,2",
+				"Samsung Galaxy 9,850,2"};
+		
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter(strPath))) {
+			for (String line : lines) {
+				bw.write(line);
+				bw.newLine();
+			}
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		List<String> list = new ArrayList<>();
+		try (BufferedReader br = new BufferedReader(new FileReader(strPath))) {
+			// essa váriavel contem as linhas que foram lidas no arquivo
+			// se estiver na ultima linha ele retornara null.
+			String line = br.readLine();
+			
+			while (line != null) {
+				String[] iten = line.split(",");
+				
+				for (String itens : iten) {
+					System.out.println(itens.substring(1));
+				}
+				// aqui ele vai ler a proxima linha
+				line = br.readLine();
+			}
+			
+		}
+		catch (IOException e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+		
+		sc.close();
+	}
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.131+C:\ws-eclipse\seção_15_Tratamento_de_exeções\.metadata\.plugins\org.eclipse.jdt.core
+1755602592.index
+1076279350.index
+1056281234.index
+2510328364.index
+1865797976.index
+2558132912.index
